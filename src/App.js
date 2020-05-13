@@ -1,5 +1,11 @@
 import React from "react";
+import { Input, Button, Select } from "antd";
+import "antd/dist/antd.css";
 import "./App.scss";
+
+const { Search } = Input;
+const { Option } = Select;
+
 class App extends React.Component {
   state = {
     val: "",
@@ -17,13 +23,21 @@ class App extends React.Component {
       list,
     });
   };
+  handleSearch = (value) => {
+    const list = this.state.list;
+    list.push(value);
+    this.setState({
+      list,
+    });
+  };
   render() {
     const val = this.state.val;
     const arr = this.state.list;
     const lisItem = [];
+    const options = [];
     arr.map((item, index) => {
-      var li = <li key={index}>{item}</li>;
-      lisItem.push(li);
+      options.push(<Option key={index}>{item}</Option>);
+      return lisItem.push(<li key={index}>{item}</li>);
     });
 
     return (
@@ -31,10 +45,31 @@ class App extends React.Component {
         <div>
           <h1>hello world!</h1>
           <p>今天是第一次使用脚手架，很神奇呢~</p>
-          <input type="text" value={val} onChange={this.handleInput} />
-          <button onClick={this.handleAdd}>添加</button>
+          <Input
+            type="text"
+            value={val}
+            onChange={this.handleInput}
+            style={{width: 300}}
+          />
+          <Button type="primary" onClick={this.handleAdd}>
+            添加
+          </Button>
         </div>
         <ul>{lisItem}</ul>
+        <div>
+          <Search
+            placeholder="input search text"
+            enterButton="添加"
+            size="large"
+            style={{ width: 360 }}
+            onSearch={this.handleSearch}
+          />
+        </div>
+        <div>
+          <Select style={{ width: 200,marginTop:'15px'}}>
+            {options}
+          </Select>
+        </div>
       </div>
     );
   }
