@@ -1,12 +1,12 @@
 import React from "react";
 import { Input, Button, Select } from "antd";
 import "antd/dist/antd.css";
-import "./../scss/demo1.scss";
+import "./../scss/antd.scss";
 
 const { Search } = Input;
 const { Option } = Select;
 
-class App extends React.Component {
+export default class Antd extends React.Component {
   state = {
     val: "",
     list: [],
@@ -72,4 +72,3 @@ class App extends React.Component {
       </div>
   }
 }
-export default App;
