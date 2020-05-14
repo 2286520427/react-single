@@ -2,7 +2,6 @@ import React from "react";
 import { Input, Button, Select } from "antd";
 import "antd/dist/antd.css";
 import "./../scss/antd.scss";
-import "./../scss/demo1.scss";
 const { Search } = Input;
 const { Option } = Select;
 
