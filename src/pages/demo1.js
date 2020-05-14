@@ -1,7 +1,7 @@
 import React from "react";
 import { Input, Button, Select } from "antd";
 import "antd/dist/antd.css";
-import "./App.scss";
+import "./../scss/demo1.scss";
 
 const { Search } = Input;
 const { Option } = Select;
@@ -40,8 +40,7 @@ class App extends React.Component {
       return lisItem.push(<li key={index}>{item}</li>);
     });
 
-    return (
-      <div className="wrapper">
+    return <div className="wrapper">
         <div>
           <h1>hello world!</h1>
           <p>今天是第一次使用脚手架，很神奇呢~</p>
@@ -71,7 +70,6 @@ class App extends React.Component {
           </Select>
         </div>
       </div>
-    );
   }
 }
 export default App;
