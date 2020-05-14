@@ -20,7 +20,6 @@ import "antd/dist/antd.css";
 export default class App extends React.Component {
   handleJump=()=>{
     this.props.history.push('/antd')
-    this.props.history.push('/home')
   }
   render() {
     return <div className="container">
